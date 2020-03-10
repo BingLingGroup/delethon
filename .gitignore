@@ -1,0 +1,17 @@
+*pyc
+*.egg-info
+*html
+build/
+dist/
+.DS_Store
+MANIFEST
+*#*
+/.idea
+/.build_and_dist
+/.build_and_dist_win32
+/.release
+*.po~
+*.mo
+Pipfile
+*.lock
+*.session

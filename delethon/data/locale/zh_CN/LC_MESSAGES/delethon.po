@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-10 17:32+0800\n"
+"PO-Revision-Date: 2020-03-10 17:33+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3\n"
+
+#: delethon/__init__.py:163
+msgid ""
+"\n"
+"Delete {msg_count} messages in chat \"{chat}\"(id: {chat_id})."
+msgstr ""
+"\n"
+"在聊天“{chat}”（id: {chat_id}）中删除{msg_count}个消息。"
+
+#: delethon/__init__.py:168
+msgid ""
+"\n"
+"Print {msg_count} messages in chat \"{chat}\"(id: {chat_id})."
+msgstr ""
+"\n"
+"在聊天“{chat}”（id: {chat_id}）中输出{msg_count}个消息。"
+
+#: delethon/__init__.py:229
+msgid "Delete {msg_count} messages in total."
+msgstr "总共删除了{msg_count}个消息。"
+
+#: delethon/__init__.py:232
+msgid "Print {msg_count} messages in total."
+msgstr "总共输出了{msg_count}个消息。"

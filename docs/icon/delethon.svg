@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Logo hand-made by Lonami (C) LonamiWebs 2018, tidied up by JuanPotato -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 100 100"
+   width="100"
+   height="100"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="delethon.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1026"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="1.18"
+     inkscape:cx="-302.283"
+     inkscape:cy="72.08297"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <circle
+     cx="50"
+     cy="50"
+     r="45"
+     fill="#3777b0"
+     id="circle2" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:69.52670288px;line-height:1.25;font-family:'Source Han Sans SC';-inkscape-font-specification:'Source Han Sans SC';letter-spacing:0px;word-spacing:0px;fill:#f0a727;fill-opacity:1;stroke:none;stroke-width:1.73816764"
+     x="19.162952"
+     y="77.383224"
+     id="text823-2"
+     transform="scale(1.0317763,0.96920233)"><tspan
+       sodipodi:role="line"
+       id="tspan821-0"
+       x="19.162952"
+       y="77.383224"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Han Serif SC';-inkscape-font-specification:'Source Han Serif SC Bold';fill:#f0a727;stroke-width:1.73816764">D</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:69.52670288px;line-height:1.25;font-family:'Source Han Sans SC';-inkscape-font-specification:'Source Han Sans SC';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffd750;fill-opacity:1;stroke:none;stroke-width:1.73816764"
+     x="23.039761"
+     y="77.383224"
+     id="text823"
+     transform="scale(1.0317763,0.96920233)"><tspan
+       sodipodi:role="line"
+       id="tspan821"
+       x="23.039761"
+       y="77.383224"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Han Serif SC';-inkscape-font-specification:'Source Han Serif SC Bold';fill:#ffd750;stroke-width:1.73816764">D</tspan></text>
+</svg>
