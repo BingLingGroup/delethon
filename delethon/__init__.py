@@ -46,6 +46,8 @@ async def iter_users_msg(  # pylint: disable=too-many-arguments, too-many-branch
     """
     msg_count = 0
     id_user_dict = {}
+    if args.log_level > 0:
+        print()
     if not user:
         async for message in client.iter_messages(
                 chat_entity,
@@ -200,7 +202,7 @@ async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
             if not args.chats:
                 if args.log_level > 0:
                     print("Error: No chats input.")
-                    return 1
+                    return
             for chat in args.chats:
                 try:
                     chat_entity = await client.get_input_entity(chat)
@@ -224,14 +226,6 @@ async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
                     msg_filter=msg_filter,
                     media_filters=media_filters)
 
-        if not args.only_print:
-            if args.log_level > 0:
-                print(_("Delete {msg_count} messages in total.").format(
-                    msg_count=total))
-        else:
-            print(_("Print {msg_count} messages in total.").format(
-                msg_count=total))
-
     else:
         if args.users:
             for user in args.users:
@@ -249,6 +243,10 @@ async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
                         msg_filter=msg_filter,
                         media_filters=media_filters)
         else:
+            if not args.chats:
+                if args.log_level > 0:
+                    print("Error: No chats input.")
+                    return
             for chat in args.chats:
                 try:
                     chat_entity = await client.get_input_entity(chat)
@@ -273,6 +271,14 @@ async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
                         user=user,
                         msg_filter=msg_filter,
                         media_filters=media_filters)
+
+    if not args.only_print:
+        if args.log_level > 0:
+            print(_("Delete {msg_count} messages in total.").format(
+                msg_count=total))
+    else:
+        print(_("Print {msg_count} messages in total.").format(
+            msg_count=total))
 
 
 def str_to_msg_filter(filter_str):  # pylint: disable=too-many-branches
@@ -388,12 +394,12 @@ def main():  # pylint: disable=too-many-branches
     if not args.api_id:
         if args.log_level > 0:
             print("Error: No api_id input.")
-            return 1
+        return 1
 
     if not args.api_hash:
         if args.log_level > 0:
             print("Error: No api_hash input.")
-            return 1
+        return 1
 
     if args.log_level == 0 and args.only_print:
         return 1

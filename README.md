@@ -40,7 +40,7 @@ It can do:
 
 It can not do:
 
-- [ ] Delete the messages that's been cached or exported to the local storage.
+- [ ] Delete the messages that's been cached, [anti-revoked](https://github.com/SpriteOvO/Telegram-Anti-Revoke) or exported to the local storage.
 - [ ] Delete the messages in group's recent actions.
 - [ ] Delete other people's messages for all in group chats unless you have the admin rights of the group.
 
@@ -79,6 +79,13 @@ pip install .
 
 Include dependencies installation commands.
 
+Install from `dev` branch.
+
+```bash
+apt install python3 python3-pip git -y
+pip3 install git+https://github.com/BingLingGroup/delethon.git@dev
+```
+
 Install from `master` branch.
 
 ```bash
@@ -100,6 +107,15 @@ Choco installation command is for cmd.(not Powershell)
 
 ```batch
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+
+Install from `dev` branch.
+
+```batch
+choco install git python curl -y
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install git+https://github.com/BingLingGroup/delethon.git@dev
 ```
 
 Install from `master` branch.

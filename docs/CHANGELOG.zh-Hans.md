@@ -1,29 +1,32 @@
-## Changelog
+## 更新日志
 
-[简体中文](docs/CHANGELOG.zh-Hans.md)
+[English](../CHANGELOG.md)
 
-All notable changes to this project will be documented in this file.
+本项目的所有明显改变将被记录在这个文件里。
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+本文件的格式将会基于[Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，同时本项目的版本号将遵守[Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
-## TOC
+## 目录
 
-- [Unreleased](#unreleased)
-  - [Added](#addedunreleased)
-  - [Changed](#changedunreleased)
+- [未发布](#未发布)
+  - [添加](#添加未发布)
+  - [修改](#修改未发布)
 - [0.1.0-alpha - 2020-03-11](#010-alpha---2020-03-11)
-  - [Added](#added040-alpha)
+  - [添加](#添加010-alpha)
 
-Click up arrow to go back to TOC.
+点击上箭头以返回目录。
 
-### [Unreleased]
+### [未发布]
+
+#### 修改(未发布)
+
+- 修复输出问题。
 
 ### [0.1.0-alpha] - 2020-03-11
 
-#### Added(0.1.0-alpha)
+#### 添加(0.1.0-alpha)
 
-- Add basic messages deleting functions.
+- 添加基本消息删除功能。
 
 <escape><a href = "#TOC">&nbsp;↑&nbsp;</a></escape>
 

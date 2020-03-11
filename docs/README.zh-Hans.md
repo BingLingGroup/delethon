@@ -40,7 +40,7 @@
 
 它不能做到：
 
-- [ ] 删除已被缓存或者导出到本地的消息。
+- [ ] 删除已被缓存，已被[防撤回](https://github.com/SpriteOvO/Telegram-Anti-Revoke)或者导出到本地的消息。
 - [ ] 删除群组最近活动中的消息。
 - [ ] 删除群组中其他人的消息，除非你有群组管理员权限。
 
@@ -79,6 +79,13 @@ pip install .
 
 包括依赖安装指令。
 
+从`dev`分支安装。
+
+```bash
+apt install python3 python3-pip git -y
+pip3 install git+https://github.com/BingLingGroup/delethon.git@dev
+```
+
 从`master`分支安装。
 
 ```bash
@@ -100,6 +107,15 @@ pip3 install git+https://github.com/BingLingGroup/delethon.git@master
 
 ```batch
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+
+从`dev`分支安装。
+
+```batch
+choco install git python curl -y
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install git+https://github.com/BingLingGroup/delethon.git@dev
 ```
 
 从`master`分支安装。

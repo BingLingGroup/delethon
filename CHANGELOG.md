@@ -13,11 +13,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - [Added](#addedunreleased)
   - [Changed](#changedunreleased)
 - [0.1.0-alpha - 2020-03-11](#010-alpha---2020-03-11)
-  - [Added](#added040-alpha)
+  - [Added](#added010-alpha)
 
 Click up arrow to go back to TOC.
 
 ### [Unreleased]
+
+#### Changed(Unreleased)
+
+- Fix print bugs.
 
 ### [0.1.0-alpha] - 2020-03-11
 
