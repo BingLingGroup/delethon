@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Defines delethon's options.
@@ -69,7 +69,7 @@ def get_cmd_args():
           '/client.html#telethon.client.messages.MessageMethods.iter_messages')
     )
 
-    operation_group = parser.add_argument_group(
+    process_group = parser.add_argument_group(
         _('Process Options'),
         _('Options to determine how to process the messages after retrieving them.')
     )
@@ -322,17 +322,19 @@ def get_cmd_args():
                "well since messages are returned in ascending order. "
                "(arg_num = 0)"))
 
-    operation_group.add_argument(
+    process_group.add_argument(
         '-op', '--only-print',
         action='store_true',
         help=_("Only print message instead of deleting them. "
                "(arg_num = 0)"))
 
-    operation_group.add_argument(
+    process_group.add_argument(
         '-fs', '--filters',
         nargs='*',
         metavar=_('type'),
         help=_("The filters to use after returning the messages from \"iter_messages\". "
+               "So using it will delete equal to or less amount of messages than "
+               "the argument set to \"--limit\". "
                "It run slower than option \"--filter\", but supports multiple filters. "
                "And it support \"empty\" type without input \"--search\". "
                "Available MessageMedia filters: contact, document, empty, "
@@ -349,11 +351,20 @@ def get_cmd_args():
         default=2,
         choices=range(1, 3),
         help=_("Print different kinds of messages. "
-               "0 for nothing. 1 for basic. 2 for more content. (arg_num = 1)"))
+               "0 for nothing. 1 for basic. 2 for more content."
+               " (arg_num = 1) (default: %(default)s)"))
 
     info_group.add_argument(
         '-h', '--help',
         action='help',
         help=_("Show %(prog)s help message and exit. (arg_num = 0)"))
+
+    info_group.add_argument(
+        '-v', '--version',
+        action='version',
+        version='%(prog)s ' + metadata.VERSION
+                + ' by ' + metadata.AUTHOR + ' <'
+                + metadata.AUTHOR_EMAIL + '>',
+        help=_("Show %(prog)s version and exit. (arg_num = 0)"))
 
     return parser.parse_args()
