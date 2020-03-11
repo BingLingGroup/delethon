@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Defines release creation scripts.
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     os.makedirs(target_data_pyi)
     copytree(src="{}/data".format(package_name), dst=target_data, exts=[".mo"], is_recursive=True)
     copytree(src="{}/data".format(package_name), dst=target_data_pyi, exts=[".mo"], is_recursive=True)
-    copytree(src=".build_and_dist/{}.dist".format(release_name), dst=target_nuitka, is_recursive=True)
+    # copytree(src=".build_and_dist/{}.dist".format(release_name), dst=target_nuitka, is_recursive=True)
 
     # command = "7z a -sdel \".release/{release_name}-{version}-win-x64-nuitka.7z\" \"{target}\"".format(
     #     release_name=release_name,

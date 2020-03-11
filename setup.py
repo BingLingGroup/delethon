@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
 
 try:
@@ -15,10 +15,14 @@ NAME = "delethon"
 with open(os.path.join(here, NAME, "metadata.py")) as metafile:
     exec(metafile.read(), metadata)
 
+with open('README.md', 'r', encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name=metadata['NAME'],
     version=metadata['VERSION'],
     description=metadata['DESCRIPTION'],
+    long_description=long_description,
     author=metadata['AUTHOR'],
     author_email=metadata['AUTHOR_EMAIL'],
     url=metadata['HOMEPAGE'],

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-09 18:05+0800\n"
-"PO-Revision-Date: 2020-03-09 18:06+0800\n"
+"POT-Creation-Date: 2020-03-11 12:19+0800\n"
+"PO-Revision-Date: 2020-03-11 12:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -228,7 +228,7 @@ msgstr "获得当前登录用户参加的所有对话实体。（参数个数为
 
 #: delethon/options.py:202 delethon/options.py:213 delethon/options.py:222
 #: delethon/options.py:233 delethon/options.py:243 delethon/options.py:253
-#: delethon/options.py:285 delethon/options.py:299 delethon/options.py:347
+#: delethon/options.py:285 delethon/options.py:299 delethon/options.py:349
 msgid "int"
 msgstr "整数"
 
@@ -351,31 +351,39 @@ msgstr "只在屏幕上输出消息而非删除他们。（参数个数为0）"
 
 #: delethon/options.py:335
 msgid ""
-"The filters to use after returning the messages from \"iter_messages\". It "
-"run slower than option \"--filter\", but supports multiple filters. And it "
-"support \"empty\" type without input \"--search\". Available MessageMedia "
-"filters: contact, document, empty, game, geo, geolive, invoice, photo, poll, "
-"unsupported, venue, webpage Ref: https://tl.telethon.dev/types/message_media."
-"html(arg_num >= 1)"
+"The filters to use after returning the messages from \"iter_messages\". So "
+"using it will delete equal to or less amount of messages than the argument "
+"set to \"--limit\". It run slower than option \"--filter\", but supports "
+"multiple filters. And it support \"empty\" type without input \"--search\". "
+"Available MessageMedia filters: contact, document, empty, game, geo, "
+"geolive, invoice, photo, poll, unsupported, venue, webpage Ref: https://tl."
+"telethon.dev/types/message_media.html(arg_num >= 1)"
 msgstr ""
-"在从\"iter_message\"方法取回消息后进行筛选的分类器。会比选项\"--filter\"更"
-"慢，但支持多个分类同时输入。同时在输入\"empty\"类时不需要输入\"--search\"选"
-"项。可用的MessageMedia分类器：contact, document, empty, game, geo, geolive, "
-"invoice, photo, poll, unsupported, venue, webpage 参考：https://tl.telethon."
-"dev/types/message_media.html（参数个数大于等于1）"
+"在从\"iter_message\"方法取回消息后进行筛选的分类器。所以使用它会删除小于等于"
+"\"--limit\"选项提供的消息数量。会比选项\"--filter\"更慢，但支持多个分类同时输"
+"入。同时在输入\"empty\"类时不需要输入\"--search\"选项。可用的MessageMedia分类"
+"器：contact, document, empty, game, geo, geolive, invoice, photo, poll, "
+"unsupported, venue, webpage 参考：https://tl.telethon.dev/types/"
+"message_media.html（参数个数大于等于1）"
 
-#: delethon/options.py:351
+#: delethon/options.py:353
+#, python-format
 msgid ""
 "Print different kinds of messages. 0 for nothing. 1 for basic. 2 for more "
-"content. (arg_num = 1)"
+"content. (arg_num = 1) (default: %(default)s)"
 msgstr ""
 "在屏幕上输出不同类别的消息。0为不输出。1为基本信息。2则是更多的信息。（参数个"
-"数为1）"
+"数为1）（默认参数为%(default)s）"
 
-#: delethon/options.py:357
+#: delethon/options.py:360
 #, python-format
 msgid "Show %(prog)s help message and exit. (arg_num = 0)"
 msgstr "显示%(prog)s的帮助信息并退出。（参数个数为0）"
+
+#: delethon/options.py:368
+#, python-format
+msgid "Show %(prog)s version and exit. (arg_num = 0)"
+msgstr "显示%(prog)s的版本信息并退出。（参数个数为0）"
 
 #~ msgid "Operation Options"
 #~ msgstr "操作选项"
