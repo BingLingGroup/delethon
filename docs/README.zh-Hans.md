@@ -82,7 +82,7 @@ pip install .
 从`master`分支安装。
 
 ```bash
-apt install python3 python-pip3 git -y
+apt install python3 python3-pip git -y
 pip3 install git+https://github.com/BingLingGroup/delethon.git@master
 ```
 

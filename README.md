@@ -82,7 +82,7 @@ Include dependencies installation commands.
 Install from `master` branch.
 
 ```bash
-apt install python3 python-pip3 git -y
+apt install python3 python3-pip git -y
 pip3 install git+https://github.com/BingLingGroup/delethon.git@master
 ```
 
