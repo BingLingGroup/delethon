@@ -4,11 +4,11 @@
 
 [简体中文](docs/README.zh-Hans.md)
 
-[更新日志](CHANGELOG.md).
+[Changelog](CHANGELOG.md)
 
 <escape><img src="docs/icon/delethon.png" width="64px"></escape>
 
-图标字体: [source-han-serif](https://source.typekit.com/source-han-serif/) ([OFL 1.1](https://github.com/adobe-fonts/source-han-serif/blob/master/LICENSE.txt))
+Icon font: [source-han-serif](https://source.typekit.com/source-han-serif/) ([OFL 1.1](https://github.com/adobe-fonts/source-han-serif/blob/master/LICENSE.txt))
 
 ### TOC
 

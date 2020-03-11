@@ -4,7 +4,7 @@
 
 [English](../README.md)
 
-[更新日志](../CHANGELOG.md).
+[更新日志](../CHANGELOG.md)
 
 <escape><img src="icon/delethon.png" width="64px"></escape>
 
