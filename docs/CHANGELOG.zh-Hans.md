@@ -9,8 +9,9 @@
 ## 目录
 
 - [未发布](#未发布)
-  - [添加](#添加未发布)
-  - [修改](#修改未发布)
+- [0.1.1-alpha - 2020-03-18](#011-alpha---2020-03-18)
+  - [添加](#添加011-alpha)
+  - [修改](#修改011-alpha)
 - [0.1.0-alpha - 2020-03-11](#010-alpha---2020-03-11)
   - [添加](#添加010-alpha)
 
@@ -18,7 +19,13 @@
 
 ### [未发布]
 
-#### 修改(未发布)
+### [0.1.1-alpha] - 2020-03-18
+
+#### 添加(0.1.1-alpha)
+
+- 添加选项允许输入一组选项来避免delethon的反复启动。
+
+#### 修改(0.1.1-alpha)
 
 - 修复输出问题。
 
@@ -28,7 +35,8 @@
 
 - 添加基本消息删除功能。
 
-<escape><a href = "#TOC">&nbsp;↑&nbsp;</a></escape>
+<escape><a href = "#目录">&nbsp;↑&nbsp;</a></escape>
 
-[Unreleased]: https://github.com/BingLingGroup/autosub/compare/0.1.0-alpha...HEAD
+[Unreleased]: https://github.com/BingLingGroup/autosub/compare/0.1.1-alpha...HEAD
+[0.1.1-alpha]: https://github.com/BingLingGroup/autosub/compare/0.1.0-alpha...0.1.1-alpha
 [0.1.0-alpha]: https://github.com/BingLingGroup/autosub/releases/tag/0.1.0-alpha
