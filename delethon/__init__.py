@@ -18,6 +18,7 @@ import pytz
 # Any changes to the path and your own modules
 from delethon import options
 from delethon import constants
+from delethon import exceptions
 
 
 INIT_TEXT = gettext.translation(domain=__name__,
@@ -391,102 +392,106 @@ def main():  # pylint: disable=too-many-branches
     """
     args = options.get_cmd_args()
 
-    if not args.api_id:
+    try:
+        if not args.api_id:
+            raise exceptions.DelethonException(_("Error: No api_id input."))
+
+        if not args.api_hash:
+            raise exceptions.DelethonException(_("Error: No api_hash input."))
+
+        if args.log_level == 0 and args.only_print:
+            raise exceptions.DelethonException("")
+
+        if args.proxy_type == "SOCKS5":
+            client = telethon.TelegramClient(
+                args.session_file,
+                args.api_id,
+                args.api_hash,
+                proxy=(socks.SOCKS5,
+                       args.proxy_address,
+                       args.proxy_port,
+                       args.proxy_username,
+                       args.proxy_password))
+        elif args.proxy_type == "SOCKS4":
+            client = telethon.TelegramClient(
+                args.session_file,
+                args.api_id,
+                args.api_hash,
+                proxy=(socks.SOCKS4,
+                       args.proxy_address,
+                       args.proxy_port,
+                       args.proxy_username,
+                       args.proxy_password))
+        elif args.proxy_type == "HTTP":
+            client = telethon.TelegramClient(
+                args.session_file,
+                args.api_id,
+                args.api_hash,
+                proxy=(socks.HTTP,
+                       args.proxy_address,
+                       args.proxy_port,
+                       args.proxy_username,
+                       args.proxy_password))
+        elif args.proxy_type == "MTPROTO":
+            client = telethon.TelegramClient(
+                args.session_file,
+                args.api_id,
+                args.api_hash,
+                connection=
+                telethon.connection.ConnectionTcpMTProxyRandomizedIntermediate,
+                proxy=(args.proxy_address,
+                       args.proxy_port,
+                       args.proxy_password))
+        elif os.environ.get("HTTP_PROXY"):
+            http_proxy_list = os.environ["HTTP_PROXY"].split(":")
+            client = telethon.TelegramClient(
+                args.session_file,
+                args.api_id,
+                args.api_hash,
+                proxy=(socks.HTTP,
+                       http_proxy_list[1][2:],
+                       int(http_proxy_list[2]),
+                       args.proxy_username,
+                       args.proxy_password))
+        else:
+            client = telethon.TelegramClient(
+                args.session_file,
+                args.api_id,
+                args.api_hash)
+
+        client.start()
+
+        if args.offset_day:
+            utc = pytz.UTC()
+            args.offset_day = utc.localize(
+                datetime.datetime.today() - datetime.timedelta(days=args.offset_day))
+
+        if args.filter:
+            msg_filter = str_to_msg_filter(args.filter)
+        else:
+            msg_filter = None
+
+        if args.filters:
+            media_filters = []
+            for filter_str in args.filters:
+                media_filter = str_to_media_filter(filter_str)
+                if media_filter:
+                    media_filters.append(media_filter)
+        else:
+            media_filters = None
+
+        with client:
+            client.loop.run_until_complete(iter_dialog(
+                args,
+                client,
+                msg_filter,
+                media_filters))
+
+    except exceptions.DelethonException as err_msg:
         if args.log_level > 0:
-            print("Error: No api_id input.")
-        return 1
-
-    if not args.api_hash:
+            print(err_msg)
+    except KeyboardInterrupt:
         if args.log_level > 0:
-            print("Error: No api_hash input.")
-        return 1
-
-    if args.log_level == 0 and args.only_print:
-        return 1
-
-    if args.proxy_type == "SOCKS5":
-        client = telethon.TelegramClient(
-            args.session_file,
-            args.api_id,
-            args.api_hash,
-            proxy=(socks.SOCKS5,
-                   args.proxy_address,
-                   args.proxy_port,
-                   args.proxy_username,
-                   args.proxy_password))
-    elif args.proxy_type == "SOCKS4":
-        client = telethon.TelegramClient(
-            args.session_file,
-            args.api_id,
-            args.api_hash,
-            proxy=(socks.SOCKS4,
-                   args.proxy_address,
-                   args.proxy_port,
-                   args.proxy_username,
-                   args.proxy_password))
-    elif args.proxy_type == "HTTP":
-        client = telethon.TelegramClient(
-            args.session_file,
-            args.api_id,
-            args.api_hash,
-            proxy=(socks.HTTP,
-                   args.proxy_address,
-                   args.proxy_port,
-                   args.proxy_username,
-                   args.proxy_password))
-    elif args.proxy_type == "MTPROTO":
-        client = telethon.TelegramClient(
-            args.session_file,
-            args.api_id,
-            args.api_hash,
-            connection=
-            telethon.connection.ConnectionTcpMTProxyRandomizedIntermediate,
-            proxy=(args.proxy_address,
-                   args.proxy_port,
-                   args.proxy_password))
-    elif os.environ.get("HTTP_PROXY"):
-        http_proxy_list = os.environ["HTTP_PROXY"].split(":")
-        client = telethon.TelegramClient(
-            args.session_file,
-            args.api_id,
-            args.api_hash,
-            proxy=(socks.HTTP,
-                   http_proxy_list[1][2:],
-                   int(http_proxy_list[2]),
-                   args.proxy_username,
-                   args.proxy_password))
-    else:
-        client = telethon.TelegramClient(
-            args.session_file,
-            args.api_id,
-            args.api_hash)
-
-    client.start()
-
-    if args.offset_day:
-        utc = pytz.UTC()
-        args.offset_day = utc.localize(
-            datetime.datetime.today() - datetime.timedelta(days=args.offset_day))
-
-    if args.filter:
-        msg_filter = str_to_msg_filter(args.filter)
-    else:
-        msg_filter = None
-
-    if args.filters:
-        media_filters = []
-        for filter_str in args.filters:
-            media_filter = str_to_media_filter(filter_str)
-            if media_filter:
-                media_filters.append(media_filter)
-    else:
-        media_filters = None
-
-    with client:
-        client.loop.run_until_complete(iter_dialog(
-            args,
-            client,
-            msg_filter,
-            media_filters))
+            print(_("\nKeyboardInterrupt. Works stopped."))
 
     return 0
