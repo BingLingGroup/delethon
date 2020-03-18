@@ -5,6 +5,8 @@ block_cipher = None
 
 a = Analysis([r"..\delethon\__main__.py",
              r"..\delethon\__init__.py",
+             r"..\delethon\cmdline_utils.py",
+             r"..\delethon\exceptions.py",
              r"..\delethon\constants.py",
              r"..\delethon\metadata.py",
              r"..\delethon\options.py",],

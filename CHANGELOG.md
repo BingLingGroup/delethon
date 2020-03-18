@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Click up arrow to go back to TOC.
 
-### Unreleased
+### [Unreleased]
 
 ### [0.1.1-alpha] - 2020-03-18
 
