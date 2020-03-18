@@ -31,7 +31,7 @@ _ = OPTIONS_TEXT.gettext
 M_ = META_TEXT.gettext
 
 
-def get_cmd_args():
+def get_cmd_parser():
     """
     Get command-line arguments.
     """
@@ -77,6 +77,11 @@ def get_cmd_args():
     info_group = parser.add_argument_group(
         _('Information Options'),
         _('Options to get extra information.')
+    )
+
+    options_group = parser.add_argument_group(
+        _('Group Options'),
+        _('Options to input group of arguments.')
     )
 
     client_group.add_argument(
@@ -367,4 +372,19 @@ def get_cmd_args():
                 + metadata.AUTHOR_EMAIL + '>',
         help=_("Show %(prog)s version and exit. (arg_num = 0)"))
 
-    return parser.parse_args()
+    options_group.add_argument(
+        '-a', '--argv',
+        nargs=argparse.REMAINDER,
+        metavar=_('option_group'),
+        help=_("A group of options to input to "
+               "avoid starting the delethon multiple times. "
+               "Except for the first group, "
+               "if the group options don't include \"-ai\" or \"-ah\", "
+               "it will avoid starting the client multiple times "
+               "to avoid extra consumption. "
+               "Remember to input the group of options in quotes "
+               "and escape the original quotes by using backslash \"\\\". "
+               "(arg_num >= 1)")
+    )
+
+    return parser

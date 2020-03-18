@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-11 12:19+0800\n"
-"PO-Revision-Date: 2020-03-11 12:20+0800\n"
+"POT-Creation-Date: 2020-03-18 16:16+0800\n"
+"PO-Revision-Date: 2020-03-18 16:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,15 @@ msgstr "信息选项"
 msgid "Options to get extra information."
 msgstr "用于获取额外信息的选项。"
 
-#: delethon/options.py:87
+#: delethon/options.py:83
+msgid "Group Options"
+msgstr "组选项"
+
+#: delethon/options.py:84
+msgid "Options to input group of arguments."
+msgstr "用于输入一组参数的选项。"
+
+#: delethon/options.py:92
 #, python-format
 msgid ""
 "Telegram app api_id. Input it or set the environment variable "
@@ -102,7 +110,7 @@ msgstr ""
 "Telegram应用api_id。输入它或者设置环境变量“TELEGRAM_API_ID”。你能从https://"
 "my.telegram.org/apps中获得一个。（参数个数为1）（默认参数为%(default)s）"
 
-#: delethon/options.py:97
+#: delethon/options.py:102
 #, python-format
 msgid ""
 "Telegram app api_hash. Input it or set the environment variable "
@@ -113,11 +121,11 @@ msgstr ""
 "https://my.telegram.org/apps中获得一个。（参数个数为1）（默认参数"
 "为%(default)s）"
 
-#: delethon/options.py:105
+#: delethon/options.py:110
 msgid "path"
 msgstr "路径"
 
-#: delethon/options.py:107
+#: delethon/options.py:112
 #, python-format
 msgid ""
 "Telegram session file path. Ref: https://docs.telethon.dev/en/latest/"
@@ -126,11 +134,11 @@ msgstr ""
 "Telegram会话文件路径。参考：https://docs.telethon.dev/en/latest/concepts/"
 "sessions.html（参数个数为1）（默认参数为%(default)s）"
 
-#: delethon/options.py:114
+#: delethon/options.py:119
 msgid "proxy_type"
 msgstr "代理类型"
 
-#: delethon/options.py:117
+#: delethon/options.py:122
 #, python-format
 msgid ""
 "PySocks or MTProto Proxy. Available types: \"SOCKS5\", \"SOCKS4\", \"HTTP\", "
@@ -148,11 +156,11 @@ msgstr ""
 "a-proxy 如果参数个数是0，使用const类型。（参数个数为0或1）（const"
 "为%(const)s）"
 
-#: delethon/options.py:133
+#: delethon/options.py:138
 msgid "address"
 msgstr "地址"
 
-#: delethon/options.py:135
+#: delethon/options.py:140
 #, python-format
 msgid ""
 "The IP address or DNS name of the proxy server. (arg_num = 1) (default: "
@@ -160,28 +168,28 @@ msgid ""
 msgstr ""
 "IP地址或者代理服务器的DNS名称。（参数个数为1）（默认参数为%(default)s）"
 
-#: delethon/options.py:141
+#: delethon/options.py:146
 msgid "port"
 msgstr "端口"
 
-#: delethon/options.py:144
+#: delethon/options.py:149
 #, python-format
 msgid "The port of the proxy server. (arg_num = 1) (default: %(default)s)"
 msgstr "代理服务器的端口。（参数个数为1）（默认参数为%(default)s）"
 
-#: delethon/options.py:150
+#: delethon/options.py:155
 msgid "username"
 msgstr "用户名"
 
-#: delethon/options.py:151
+#: delethon/options.py:156
 msgid "Set proxy username. (arg_num = 1)"
 msgstr "设置代理用户名。（参数个数为1）"
 
-#: delethon/options.py:157
+#: delethon/options.py:162
 msgid "password"
 msgstr "密码"
 
-#: delethon/options.py:158
+#: delethon/options.py:163
 msgid ""
 "Set proxy password. When using \"MTPROTO\", this option is \"secret\" "
 "instead. (arg_num = 1)"
@@ -189,11 +197,11 @@ msgstr ""
 "设置代理密码。如果使用\"MTPROTO\"，这个参数则会代表\"secret\"。（参数个数为"
 "1）"
 
-#: delethon/options.py:166 delethon/options.py:179
+#: delethon/options.py:171 delethon/options.py:184
 msgid "entity_like"
 msgstr "实体类"
 
-#: delethon/options.py:167
+#: delethon/options.py:172
 msgid ""
 "Get the messages in the chat entity/entities. entity_like can be Telegram "
 "username, Group name and so on. If failed to get one, it will use it to "
@@ -206,7 +214,7 @@ msgstr ""
 "参考：https://docs.telethon.dev/en/latest/concepts/entities.html#getting-"
 "entities（参数个数大于等于1）"
 
-#: delethon/options.py:180
+#: delethon/options.py:185
 msgid ""
 "Get the messages from the user entity/entities. If not input, gets all users "
 "messages. Ref: https://docs.telethon.dev/en/latest/concepts/entities."
@@ -216,23 +224,23 @@ msgstr ""
 "考https://docs.telethon.dev/en/latest/concepts/entities.html#getting-"
 "entities（参数个数大于等于1）"
 
-#: delethon/options.py:190
+#: delethon/options.py:195
 msgid "Get messages from the current user who is logged in. (arg_num = 0)"
 msgstr "获取当前登录用户发送的消息。（参数个数为0）"
 
-#: delethon/options.py:196
+#: delethon/options.py:201
 msgid ""
 "Iterate over all the chat entity/entities that the current user joined. "
 "(arg_num = 0)"
 msgstr "获得当前登录用户参加的所有对话实体。（参数个数为0）"
 
-#: delethon/options.py:202 delethon/options.py:213 delethon/options.py:222
-#: delethon/options.py:233 delethon/options.py:243 delethon/options.py:253
-#: delethon/options.py:285 delethon/options.py:299 delethon/options.py:349
+#: delethon/options.py:207 delethon/options.py:218 delethon/options.py:227
+#: delethon/options.py:238 delethon/options.py:248 delethon/options.py:258
+#: delethon/options.py:290 delethon/options.py:304 delethon/options.py:354
 msgid "int"
 msgstr "整数"
 
-#: delethon/options.py:204
+#: delethon/options.py:209
 msgid ""
 "Number of messages to be retrieved. Slower when more than 3000. Ref: https://"
 "docs.telethon.dev/en/latest/modules/client.html#telethon.client.messages."
@@ -242,43 +250,43 @@ msgstr ""
 "latest/modules/client.html#telethon.client.messages.MessageMethods."
 "iter_messages （参数个数为1）（默认不限制数量）"
 
-#: delethon/options.py:215
+#: delethon/options.py:220
 msgid ""
 "Offset day (messages previous to this day will be retrieved). Exclusive. "
 "(arg_num = 1)"
 msgstr "偏移日期（比这天早的消息会被取回）。独占性。（参数个数为1）"
 
-#: delethon/options.py:225
+#: delethon/options.py:230
 msgid ""
 "Offset message ID (only messages previous to the given ID will be "
 "retrieved). Exclusive. (arg_num = 1)"
 msgstr ""
 "偏移消息ID（只有比这个ID更早的消息才会被取回）。独占性。（参数个数为1）"
 
-#: delethon/options.py:236
+#: delethon/options.py:241
 msgid ""
 "All the messages with a higher (newer) ID or equal to this will be excluded. "
 "(arg_num = 1)"
 msgstr "所有比这个ID数值更高也就是更新的消息会被排除。（参数个数为1）"
 
-#: delethon/options.py:246
+#: delethon/options.py:251
 msgid ""
 "All the messages with a lower (older) ID or equal to this will be excluded. "
 "(arg_num = 1)"
 msgstr "所有比这个ID数值更小也就是更旧的消息会被排除。（参数个数为1）"
 
-#: delethon/options.py:256
+#: delethon/options.py:261
 msgid ""
 "Additional message offset (all of the specified offsets + this offset = "
 "older messages). (arg_num = 1)"
 msgstr ""
 "额外消息偏移（所有制ID那个的偏移加上这个偏移=更旧的消息）。（参数个数为1）"
 
-#: delethon/options.py:263
+#: delethon/options.py:268
 msgid "str"
 msgstr "字符串"
 
-#: delethon/options.py:264
+#: delethon/options.py:269
 msgid ""
 "The string to be used as a search query. Give the same result as other "
 "Telegram official clients meaning it's not optimized for some non-English "
@@ -287,11 +295,11 @@ msgstr ""
 "用来搜索的字符串。和其他Telegram官方客户端得到的搜索结果一样，意味着对部分非"
 "英语语言未做优化。（参数个数为1）"
 
-#: delethon/options.py:272 delethon/options.py:334
+#: delethon/options.py:277 delethon/options.py:339
 msgid "type"
 msgstr "类型"
 
-#: delethon/options.py:273
+#: delethon/options.py:278
 msgid ""
 "The filter to use before returning messages. For instance, \"photos\" for "
 "\"InputMessagesFilterPhotos\" would yield only messages containing photos. "
@@ -306,7 +314,7 @@ msgstr ""
 "geo, gif, music, mentions, phonecalls, photovideo, photos, roundvideo, "
 "roundvoice, url, video, voice（参数个数为1）"
 
-#: delethon/options.py:287
+#: delethon/options.py:292
 msgid ""
 "Wait time (in seconds) between different GetHistoryRequest. Use this "
 "parameter to avoid hitting the FloodWaitError as needed. If left to None, it "
@@ -318,7 +326,7 @@ msgstr ""
 "FloodWaitError。如果不输入，超过3000个消息时的等待默认为1秒。如果id参数使用"
 "了，id超过300时，这个时间将被设置为10秒。（参数个数为1）"
 
-#: delethon/options.py:302
+#: delethon/options.py:307
 msgid ""
 "A single integer ID (or several IDs) for the message that should be "
 "returned. This parameter takes precedence over the rest (which will be "
@@ -331,7 +339,7 @@ msgstr ""
 "条消息。注意如果消息不存在，会返回None，所以将包含ID的列表压缩在一起能得到一"
 "对一的结果。（参数个数大于等于1）"
 
-#: delethon/options.py:316
+#: delethon/options.py:321
 msgid ""
 "The messages will be returned in reverse order (from oldest to newest, "
 "instead of the default newest to oldest). This also means that the meaning "
@@ -345,11 +353,11 @@ msgstr ""
 "的。 同样地，\"--min-id\"等效于\"--offset-id\"而非\"--max-id\"因为消息会按照"
 "升序返回。（参数个数为0）"
 
-#: delethon/options.py:328
+#: delethon/options.py:333
 msgid "Only print message instead of deleting them. (arg_num = 0)"
 msgstr "只在屏幕上输出消息而非删除他们。（参数个数为0）"
 
-#: delethon/options.py:335
+#: delethon/options.py:340
 msgid ""
 "The filters to use after returning the messages from \"iter_messages\". So "
 "using it will delete equal to or less amount of messages than the argument "
@@ -366,7 +374,7 @@ msgstr ""
 "unsupported, venue, webpage 参考：https://tl.telethon.dev/types/"
 "message_media.html（参数个数大于等于1）"
 
-#: delethon/options.py:353
+#: delethon/options.py:358
 #, python-format
 msgid ""
 "Print different kinds of messages. 0 for nothing. 1 for basic. 2 for more "
@@ -375,15 +383,31 @@ msgstr ""
 "在屏幕上输出不同类别的消息。0为不输出。1为基本信息。2则是更多的信息。（参数个"
 "数为1）（默认参数为%(default)s）"
 
-#: delethon/options.py:360
+#: delethon/options.py:365
 #, python-format
 msgid "Show %(prog)s help message and exit. (arg_num = 0)"
 msgstr "显示%(prog)s的帮助信息并退出。（参数个数为0）"
 
-#: delethon/options.py:368
+#: delethon/options.py:373
 #, python-format
 msgid "Show %(prog)s version and exit. (arg_num = 0)"
 msgstr "显示%(prog)s的版本信息并退出。（参数个数为0）"
+
+#: delethon/options.py:378
+msgid "option_group"
+msgstr "一组选项"
+
+#: delethon/options.py:379
+msgid ""
+"A group of options to input to avoid starting the delethon multiple times. "
+"Except for the first group, if the group options don't include \"-ai\" or \"-"
+"ah\", it will avoid starting the client multiple times to avoid extra "
+"consumption. Remember to input the group of options in quotes and escape the "
+"original quotes by using backslash \"\\\". (arg_num >= 1)"
+msgstr ""
+"输入一组选项来避免反复运行delethon。除了第一组参数，如果参数没有包含\"-ai\"和"
+"\"-ah\"，它会避免重复启动客户端带来的额外消耗。输入一组选项时，需要用引号包"
+"围，并且要把原先的引号用反斜线\"\\\"转义。（参数个数大于等于1）"
 
 #~ msgid "Operation Options"
 #~ msgstr "操作选项"

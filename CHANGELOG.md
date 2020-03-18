@@ -10,14 +10,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## TOC
 
 - [Unreleased](#unreleased)
-  - [Added](#addedunreleased)
-  - [Changed](#changedunreleased)
+- [0.1.1-alpha - 2020-03-18](#011-alpha---2020-03-18)
+  - [Added](#added011-alpha)
+  - [Changed](#changed011-alpha)
 - [0.1.0-alpha - 2020-03-11](#010-alpha---2020-03-11)
-  - [Added](#added040-alpha)
+  - [Added](#added010-alpha)
 
 Click up arrow to go back to TOC.
 
-### [Unreleased]
+### Unreleased
+
+### [0.1.1-alpha] - 2020-03-18
+
+#### Added(0.1.1-alpha)
+
+- Add option to input a group of options to avoid starting the delethon multiple times.
+
+#### Changed(0.1.1-alpha)
+
+- Fix print bugs.
 
 ### [0.1.0-alpha] - 2020-03-11
 
@@ -27,5 +38,6 @@ Click up arrow to go back to TOC.
 
 <escape><a href = "#TOC">&nbsp;↑&nbsp;</a></escape>
 
-[Unreleased]: https://github.com/BingLingGroup/autosub/compare/0.1.0-alpha...HEAD
+[Unreleased]: https://github.com/BingLingGroup/autosub/compare/0.1.1-alpha...HEAD
+[0.1.1-alpha]: https://github.com/BingLingGroup/autosub/compare/0.1.0-alpha...0.1.1-alpha
 [0.1.0-alpha]: https://github.com/BingLingGroup/autosub/releases/tag/0.1.0-alpha

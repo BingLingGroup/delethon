@@ -1,31 +1,42 @@
-## Changelog
+## 更新日志
 
-[简体中文](docs/CHANGELOG.zh-Hans.md)
+[English](../CHANGELOG.md)
 
-All notable changes to this project will be documented in this file.
+本项目的所有明显改变将被记录在这个文件里。
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+本文件的格式将会基于[Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，同时本项目的版本号将遵守[Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
-## TOC
+## 目录
 
-- [Unreleased](#unreleased)
-  - [Added](#addedunreleased)
-  - [Changed](#changedunreleased)
+- [未发布](#未发布)
+- [0.1.1-alpha - 2020-03-18](#011-alpha---2020-03-18)
+  - [添加](#添加011-alpha)
+  - [修改](#修改011-alpha)
 - [0.1.0-alpha - 2020-03-11](#010-alpha---2020-03-11)
-  - [Added](#added040-alpha)
+  - [添加](#添加010-alpha)
 
-Click up arrow to go back to TOC.
+点击上箭头以返回目录。
 
-### [Unreleased]
+### [未发布]
+
+### [0.1.1-alpha] - 2020-03-18
+
+#### 添加(0.1.1-alpha)
+
+- 添加选项允许输入一组选项来避免delethon的反复启动。
+
+#### 修改(0.1.1-alpha)
+
+- 修复输出问题。
 
 ### [0.1.0-alpha] - 2020-03-11
 
-#### Added(0.1.0-alpha)
+#### 添加(0.1.0-alpha)
 
-- Add basic messages deleting functions.
+- 添加基本消息删除功能。
 
-<escape><a href = "#TOC">&nbsp;↑&nbsp;</a></escape>
+<escape><a href = "#目录">&nbsp;↑&nbsp;</a></escape>
 
-[Unreleased]: https://github.com/BingLingGroup/autosub/compare/0.1.0-alpha...HEAD
+[Unreleased]: https://github.com/BingLingGroup/autosub/compare/0.1.1-alpha...HEAD
+[0.1.1-alpha]: https://github.com/BingLingGroup/autosub/compare/0.1.0-alpha...0.1.1-alpha
 [0.1.0-alpha]: https://github.com/BingLingGroup/autosub/releases/tag/0.1.0-alpha
