@@ -34,7 +34,7 @@ Delete Telegram messages based on Telethon.
 
 It can do:
 
-- [x] Delete the messages of the logged in user for all members in group chats.
+- [x] Delete the messages of the logged in user for everyone in group chats.
 - [x] Delete certain types of the messages.
 - [x] Print instead of deleting the messages.
 
@@ -42,7 +42,7 @@ It can not do:
 
 - [ ] Delete the messages that's been cached, [anti-revoked](https://github.com/SpriteOvO/Telegram-Anti-Revoke) or exported to the local storage.
 - [ ] Delete the messages in group's recent actions.
-- [ ] Delete other people's messages for all in group chats unless you have the admin rights of the group.
+- [ ] Delete other people's messages for everyone in group chats unless you have the admin rights of the group.
 
 ### License
 
