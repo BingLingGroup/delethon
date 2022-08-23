@@ -90,17 +90,22 @@ async def iter_users_msg(  # pylint: disable=too-many-arguments, too-many-branch
                               date=message.date,
                               msg_id=message.id))
                 else:
-                    id_user_dict[message.from_id] = await client.get_entity(message.from_id)
-                    print("{first_name} {last_name}(@{username})"
-                          "(uid: {user_id}) {date} (mid: {msg_id})".format(
-                              first_name=id_user_dict[message.from_id].first_name,
-                              last_name=id_user_dict[message.from_id].last_name,
-                              username=id_user_dict[message.from_id].username,
-                              user_id=message.from_id,
-                              date=message.date,
-                              msg_id=message.id))
-            print(message.message)
-            print()
+                    if message.from_id:
+                        id_user_dict[message.from_id] = await client.get_entity(message.from_id)
+                        print("{first_name} {last_name}(@{username})"
+                              "(uid: {user_id}) {date} (mid: {msg_id})".format(
+                                  first_name=id_user_dict[message.from_id].first_name,
+                                  last_name=id_user_dict[message.from_id].last_name,
+                                  username=id_user_dict[message.from_id].username,
+                                  user_id=message.from_id,
+                                  date=message.date,
+                                  msg_id=message.id))
+                    else:
+                        print("(uid: {user_id}) {date} (mid: {msg_id})".format(
+                            user_id=message.from_id,
+                            date=message.date,
+                            msg_id=message.id))
+            print(f"{message.message}\n")
             msg_count = msg_count + 1
             if not args.only_print:
                 await client.delete_messages(chat_entity, message.id)
@@ -146,8 +151,7 @@ async def iter_users_msg(  # pylint: disable=too-many-arguments, too-many-branch
                           user_id=message.from_id,
                           date=message.date,
                           msg_id=message.id))
-            print(message.message)
-            print()
+            print(f"{message.message}\n")
             msg_count = msg_count + 1
             if not args.only_print:
                 await client.delete_messages(chat_entity, message.id)
@@ -155,7 +159,6 @@ async def iter_users_msg(  # pylint: disable=too-many-arguments, too-many-branch
         return 0
 
     chat = await client.get_entity(chat_entity)
-
     if isinstance(chat, telethon.types.User):
         title = "@{}".format(chat.username)
     else:
@@ -172,6 +175,39 @@ async def iter_users_msg(  # pylint: disable=too-many-arguments, too-many-branch
             chat=title,
             chat_id=chat.id))
     return msg_count
+
+
+async def get_chat_entity(
+        client,
+        chat
+):
+    """
+    Get chat_entity from an entity_like argument.
+    """
+    try:
+        chat_entity = await client.get_input_entity(chat)
+    except ValueError:
+        chat_entity = None
+        try:
+            chat_id = int(chat)
+            async for dialog in client.iter_dialogs(limit=None):
+                if dialog.id == chat_id:
+                    chat_entity = dialog
+        except ValueError:
+            async for dialog in client.iter_dialogs(limit=None):
+                if dialog.name == chat:
+                    chat_entity = dialog
+        except telethon.errors.rpcerrorlist.UsernameInvalidError:
+            chat_entity = None
+        except telethon.errors.rpcbaseerrors.RPCError as error:
+            print(error)
+            chat_entity = None
+    except telethon.errors.rpcerrorlist.UsernameInvalidError:
+        chat_entity = None
+    except telethon.errors.rpcbaseerrors.RPCError as error:
+        print(error)
+        chat_entity = None
+    return chat_entity
 
 
 async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
@@ -214,21 +250,9 @@ async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
                     print(_("Error: No chats input."))
                     return
             for chat in args.chats:
-                try:
-                    chat_entity = await client.get_input_entity(chat)
-                except ValueError as error:
-                    chat_entity = None
-                    try:
-                        chat_id = int(chat)
-                        async for dialog in client.iter_dialogs(limit=None):
-                            if dialog.id == chat_id:
-                                chat_entity = dialog
-                    except ValueError:
-                        async for dialog in client.iter_dialogs(limit=None):
-                            if dialog.name == chat:
-                                chat_entity = dialog
-                    if not chat_entity:
-                        raise error
+                chat_entity = await get_chat_entity(client=client, chat=chat)
+                if not chat_entity:
+                    continue
                 total = total + await iter_users_msg(
                     args,
                     chat_entity=chat_entity,
@@ -258,21 +282,9 @@ async def iter_dialog(  # pylint: disable=too-many-branches, too-many-statements
                     print(_("Error: No chats input."))
                     return
             for chat in args.chats:
-                try:
-                    chat_entity = await client.get_input_entity(chat)
-                except ValueError as error:
-                    chat_entity = None
-                    try:
-                        chat_id = int(chat)
-                        async for dialog in client.iter_dialogs(limit=None):
-                            if dialog.id == chat_id:
-                                chat_entity = dialog
-                    except ValueError:
-                        async for dialog in client.iter_dialogs(limit=None):
-                            if dialog.name == chat:
-                                chat_entity = dialog
-                    if not chat_entity:
-                        raise error
+                chat_entity = await get_chat_entity(client=client, chat=chat)
+                if not chat_entity:
+                    continue
                 for user in user_list:
                     total = total + await iter_users_msg(
                         args,
@@ -464,9 +476,7 @@ def start_client(args):
             args.session_file,
             args.api_id,
             args.api_hash)
-
     client.start()
-
     return client
 
 
@@ -505,10 +515,15 @@ def is_same_client(args, last_args):
     """
     Check if the two args can use the same client.
     """
-    if not args.api_id or not args.api_hash:
+    if not args.api_id or not args.api_hash or not args.proxy_type:
         args.api_id = last_args.api_id
         args.api_hash = last_args.api_hash
         args.session_file = last_args.session_file
+        args.proxy_type = last_args.proxy_type
+        args.proxy_address = last_args.proxy_address
+        args.proxy_port = last_args.proxy_port
+        args.proxy_username = last_args.proxy_username
+        args.proxy_password = last_args.proxy_password
 
     if args.api_id == last_args.api_id\
             and args.api_hash == last_args.api_hash\

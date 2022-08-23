@@ -210,8 +210,7 @@ def get_cmd_parser():
                "Slower when more than 3000. "
                "Ref: https://docs.telethon.dev/en/latest/modules"
                "/client.html#telethon.client.messages.MessageMethods.iter_messages "
-               "(arg_num = 1) (default: unlimited)")
-    )
+               "(arg_num = 1) (default: unlimited)"))
 
     iter_messages_group.add_argument(
         '-ofd', '--offset-day',
@@ -219,8 +218,7 @@ def get_cmd_parser():
         type=int,
         help=_("Offset day (messages previous to this day will be retrieved). "
                "Exclusive. "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-ofi', '--offset-id',
@@ -230,8 +228,7 @@ def get_cmd_parser():
         help=_("Offset message ID (only messages previous to the given ID "
                "will be retrieved). "
                "Exclusive. "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-mxi', '--max-id',
@@ -240,8 +237,7 @@ def get_cmd_parser():
         default=0,
         help=_("All the messages with a higher (newer) ID "
                "or equal to this will be excluded. "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-mni', '--min-id',
@@ -250,8 +246,7 @@ def get_cmd_parser():
         default=0,
         help=_("All the messages with a lower (older) ID "
                "or equal to this will be excluded. "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-aof', '--add-offset',
@@ -260,8 +255,7 @@ def get_cmd_parser():
         default=0,
         help=_("Additional message offset "
                "(all of the specified offsets + this offset = older messages). "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-s', '--search',
@@ -269,8 +263,7 @@ def get_cmd_parser():
         help=_("The string to be used as a search query. "
                "Give the same result as other Telegram official clients "
                "meaning it's not optimized for some non-English languages. "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-f', '--filter',
@@ -282,8 +275,7 @@ def get_cmd_parser():
                "Available MessagesFilters: chatphotos, contacts, document, "
                "empty, geo, gif, music, mentions, phonecalls, photovideo, "
                "photos, roundvideo, roundvoice, url, video, voice "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-wt', '--wait-time',
@@ -296,8 +288,7 @@ def get_cmd_parser():
                "If the ids parameter is used, "
                "this time will default to 10 seconds only "
                "if the amount of IDs is higher than 300. "
-               "(arg_num = 1)")
-    )
+               "(arg_num = 1)"))
 
     iter_messages_group.add_argument(
         '-ids', '--ids',
@@ -312,8 +303,7 @@ def get_cmd_parser():
                "doesn't exist, None will appear in its place, "
                "so that zipping the list of IDs with the messages "
                "can match one-to-one. "
-               "(arg_num >= 1)")
-    )
+               "(arg_num >= 1)"))
 
     iter_messages_group.add_argument(
         '-r', '--reverse',
@@ -346,8 +336,7 @@ def get_cmd_parser():
                "game, geo, geolive, invoice, photo, poll, unsupported, "
                "venue, webpage "
                "Ref: https://tl.telethon.dev/types/message_media.html"
-               "(arg_num >= 1)")
-    )
+               "(arg_num >= 1)"))
 
     info_group.add_argument(
         '-ll', '--log-level',
@@ -379,7 +368,7 @@ def get_cmd_parser():
         help=_("A group of options to input to "
                "avoid starting the delethon multiple times. "
                "Except for the first group, "
-               "if the group options don't include \"-ai\" or \"-ah\", "
+               "if the group options don't include \"-ai\" or \"-ah\" or \"-pt\", "
                "it will avoid starting the client multiple times "
                "to avoid extra consumption. "
                "Remember to input the group of options in quotes "
