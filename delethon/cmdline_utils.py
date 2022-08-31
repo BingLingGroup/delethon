@@ -204,6 +204,8 @@ async def get_chat_entity(
             chat_entity = None
     except telethon.errors.rpcerrorlist.UsernameInvalidError:
         chat_entity = None
+    except telethon.errors.rpcerrorlist.ChannelPrivateError:
+        chat_entity = None
     except telethon.errors.rpcbaseerrors.RPCError as error:
         print(error)
         chat_entity = None
